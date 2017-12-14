@@ -1,3 +1,9 @@
+"use strict";
+
+// isX determines which letter is next (X,O)
+var isX = true;
+var winX = 0;
+var winY = 0;
 var possibleWinners = 
 {
 	winningCombinations: 
@@ -28,7 +34,7 @@ var possibleWinners =
 		{p1:0, p2:6, p3:12, p4:18},
 		{p1:6, p2:12, p3:18, p4:24},
 		{p1:4, p2:8, p3:12, p4:16},
-		{p1:8, p2:12, p3:18, p4:20},
+		{p1:8, p2:12, p3:16, p4:20},
 		{p1:1, p2:7, p3:13, p4:19},
 		{p1:3, p2:7, p3:11, p4:15},
 		{p1:5, p2:11, p3:17, p4:23},
@@ -36,13 +42,17 @@ var possibleWinners =
 	]
 };
 
-// isX determines which letter is next (X,O)
-var isX = true;
+function pointXY()
+{
+	var playerX = document.getElementById("playerX");
+	var playerY = document.getElementById("playerY");
+	playerX.innerHTML = "Player 1 Wins: " + winX;
+	playerY.innerHTML = "Player 2 Wins: " + winY;
+}
 
 function reset()
 {
 	var gameStatus = document.getElementById("gameStatus");
-	
 	var moves = document.querySelectorAll("#game tbody td");
 	
 	for (var i = 0; i < moves.length; i++) {
@@ -50,14 +60,15 @@ function reset()
 		moves[i].className = "clear";
 	}
 	gameStatus.innerHTML = " ";
+	pointXY();
 }
 
 function move(pThis)
 {
 	var gameStatus = document.getElementById("gameStatus");
-	
+	var turn = document.getElementById("turn");
 	// get all the td from the td
-	var moves = document.querySelectorAll("#game tbody td");	
+	var moves = document.querySelectorAll("#game tbody td");
 
 	if (pThis.innerHTML != " ")
 	{
@@ -68,10 +79,12 @@ function move(pThis)
 		if (isX)
 		{
 			pThis.innerHTML = "X";
+			turn.innerHTML = "Player 2 Turn";
 		}
 		else
 		{
-			pThis.innerHTML = "O";	
+			pThis.innerHTML = "O";
+			turn.innerHTML = "Player 1 Turn";
 		}
 		isX = !isX;
 	}
@@ -90,6 +103,7 @@ function move(pThis)
 			moves[e.p2].className = "winner";
 			moves[e.p3].className = "winner";
 			moves[e.p4].className = "winner";
+			gainPoint(m1);
 			return false;
 		}
 		else
@@ -98,4 +112,17 @@ function move(pThis)
 		}	
 			return true;
 	});
+}
+
+function gainPoint(m1)
+{
+	if (m1 == "X")
+	{
+		winX +=1;
+		return window.winX;
+	}
+	else{
+		winY +=1;
+		return window.winY;
+	}
 }

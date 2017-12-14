@@ -8,10 +8,11 @@
     </script>
 
 </head>
-<body>
-    <div id="divBody">
+<body onload="pointXY()">
+    <div class="divBody">
         <table id="game" class="game">
-            <caption>Match 4</caption>
+            <h1>Match 4</h1>
+            <h1 id = "turn">Player 1 Turn</h1>
             <tbody>
                 <tr>
                     <td onclick="move(this)"> </td>
@@ -50,8 +51,13 @@
                 </tr>
             </tbody>
         </table>
+        <button class="resetButton" onclick="reset()">Reset</button>
+        <p id="gameStatus"></p>
     </div>
-    <button class="resetButton" onclick="reset()">Reset</button>
-    <p id="gameStatus"></p>
+    <div class="divRecord">
+        <h2>Record</h2>
+        <p id="playerX"></p>
+        <p id="playerY"></p>
+    </div>
 </body>
 </html>
