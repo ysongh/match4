@@ -4,7 +4,7 @@
 var isX = true;
 var winX = 0;
 var winY = 0;
-var possibleWinners = 
+const possibleWinners = 
 {
 	winningCombinations: 
 	[
@@ -44,16 +44,16 @@ var possibleWinners =
 
 function pointXY()
 {
-	var playerX = document.getElementById("playerX");
-	var playerY = document.getElementById("playerY");
+	let playerX = document.getElementById("playerX");
+	let playerY = document.getElementById("playerY");
 	playerX.innerHTML = "Player 1 Wins: " + winX;
 	playerY.innerHTML = "Player 2 Wins: " + winY;
 }
 
 function reset()
 {
-	var gameStatus = document.getElementById("gameStatus");
-	var moves = document.querySelectorAll("#game tbody td");
+	let gameStatus = document.getElementById("gameStatus");
+	let moves = document.querySelectorAll("#game tbody td");
 	
 	for (var i = 0; i < moves.length; i++) {
 		moves[i].innerHTML = " ";
@@ -65,10 +65,10 @@ function reset()
 
 function move(pThis)
 {
-	var gameStatus = document.getElementById("gameStatus");
-	var turn = document.getElementById("turn");
+	let gameStatus = document.getElementById("gameStatus");
+	let turn = document.getElementById("turn");
 	// get all the td from the td
-	var moves = document.querySelectorAll("#game tbody td");
+	let moves = document.querySelectorAll("#game tbody td");
 
 	if (pThis.innerHTML != " ")
 	{
@@ -91,10 +91,10 @@ function move(pThis)
 	
 	possibleWinners.winningCombinations.every(function(e, index, array) 
 	{
-		var m1 = moves[e.p1].innerHTML;
-		var m2 = moves[e.p2].innerHTML;
-		var m3 = moves[e.p3].innerHTML;
-		var m4 = moves[e.p4].innerHTML;
+		let m1 = moves[e.p1].innerHTML;
+		let m2 = moves[e.p2].innerHTML;
+		let m3 = moves[e.p3].innerHTML;
+		let m4 = moves[e.p4].innerHTML;
 
 		if (m1 == m2 && m2 == m3 && m3 == m4 && m1 != " ")
 		{
@@ -114,15 +114,4 @@ function move(pThis)
 	});
 }
 
-function gainPoint(m1)
-{
-	if (m1 == "X")
-	{
-		winX +=1;
-		return window.winX;
-	}
-	else{
-		winY +=1;
-		return window.winY;
-	}
-}
+const gainPoint = m1 => m1 === "X" ? winX +=1 : winY +=1;
