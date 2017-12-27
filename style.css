@@ -23,15 +23,12 @@ table.game{
     width:700px;
     height:700px;
     border:solid 1px white;
-    margin-left: 200px;
-    position: absolute;
 }
 .divRecord{
     background-color: lightgrey;
     width: 300px;
     border: 25px solid green;
     padding: 15px;
-    margin: 65px 200px 20px 125px;
     float:right;
 }
 .game tbody td{

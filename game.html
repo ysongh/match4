@@ -4,60 +4,68 @@
     <title>Match 4</title>    
    
     <link rel="stylesheet" type="text/css" href="style.css" >
-    <script src="action.js">
-    </script>
+    <script src="action.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 </head>
 <body onload="pointXY()">
-    <div class="divBody">
-        <table id="game" class="game">
-            <h1>Match 4</h1>
-            <h1 id = "turn">Player 1 Turn</h1>
-            <tbody>
-                <tr>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-                </tr>
-                <tr>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-                </tr>
-                <tr>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-                </tr>
-    			 <tr>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-                </tr>
-    			<tr>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-                    <td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-    				<td onclick="move(this)"> </td>
-                </tr>
-            </tbody>
-        </table>
-        <button class="resetButton" onclick="reset()">Reset</button>
-        <p id="gameStatus"></p>
-    </div>
-    <div class="divRecord">
-        <h2>Record</h2>
-        <p id="playerX"></p>
-        <p id="playerY"></p>
+    <div class="container">
+        <h1>Match 4</h1>
+        <h1 id = "turn">Player 1 Turn</h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="divBody">
+                    <table id="game" class="game">
+                        <tbody>
+                            <tr>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                            </tr>
+                            <tr>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                            </tr>
+                            <tr>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                            </tr>
+                			 <tr>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                            </tr>
+                			<tr>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                                <td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                				<td onclick="move(this)"> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="resetButton" onclick="reset()">Reset</button>
+                    <p id="gameStatus"></p>
+                </div>
+            </div>
+            <div class="col-lg-6" >
+                <div class="divRecord">
+                    <h2>Record</h2>
+                    <p id="playerX"></p>
+                    <p id="playerY"></p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
